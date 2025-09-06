@@ -8,15 +8,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        margin: 0;
+        height: 100vh;   
+        margin: 0;       
         font-family: Arial, sans-serif;
         text-align: center;
       }
 
       .container {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; 
         align-items: center;
       }
 
@@ -26,19 +26,29 @@
       }
 
       p {
-        font-size: 20px;
+        font-size: 20px; 
         margin: 10px 0;
-      }
-
-      #start-label {
-        font-size: 22px;
-        margin-top: 20px;
       }
 
       #timer {
         font-size: 28px;
         font-weight: bold;
-        margin-top: 10px;
+        margin-top: 20px;
+      }
+
+      a.button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        background-color: blue;
+        border-radius: 5px;
+      }
+
+      a.button:hover {
+        background-color: darkblue;
       }
     </style>
   </head>
@@ -47,8 +57,10 @@
       <h1>Hello Injured Workers. My True Story of a Crime</h1>
       <p>Covered up by Cooke Aquaculture and WorksafeNB</p>
 
-      <div id="start-label">Time since August 14, 2014 at 5:00 PM:</div>
       <div id="timer">Loading...</div>
+
+      <!-- Link to the image gallery -->
+      <a href="images.html" class="button">View Image Gallery ➡</a>
     </div>
 
     <script>
@@ -63,7 +75,6 @@
         }
 
         let diff = now - startDate;
-
         let totalSeconds = Math.floor(diff / 1000);
         let totalMinutes = Math.floor(totalSeconds / 60);
         let totalHours = Math.floor(totalMinutes / 60);
