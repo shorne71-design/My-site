@@ -52,24 +52,17 @@
     </div>
 
     <script>
-      // Safer: year, monthIndex (0=Jan), day, hour, minute, second
-      const startDate = new Date(2014, 7, 14, 17, 0, 0);
+      const startDate = new Date("2014-08-14T17:00:00Z");
 
       function updateTimer() {
         const now = new Date();
-        let diff = now - startDate;
 
-        if (diff < 0) {
+        if (now < startDate) {
           document.getElementById("timer").innerHTML = "Not started yet";
           return;
         }
 
-        // Basic units
-        let seconds = Math.floor(diff / 1000) % 60;
-        let minutes = Math.floor(diff / (1000 * 60)) % 60;
-        let hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
-
-        // Calendar math for years, months, days
+        // Years and months
         let years = now.getFullYear() - startDate.getFullYear();
         let months = now.getMonth() - startDate.getMonth();
         if (months < 0) {
@@ -77,10 +70,18 @@
           months += 12;
         }
 
+        // Calculate days correctly
         let tempStart = new Date(startDate);
         tempStart.setFullYear(startDate.getFullYear() + years);
         tempStart.setMonth(startDate.getMonth() + months);
+
         let days = Math.floor((now - tempStart) / (1000 * 60 * 60 * 24));
+
+        // Hours, minutes, seconds from remainder
+        let diff = now - tempStart;
+        let hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+        let minutes = Math.floor(diff / (1000 * 60)) % 60;
+        let seconds = Math.floor(diff / 1000) % 60;
 
         document.getElementById("timer").innerHTML =
           years + " years, " +
