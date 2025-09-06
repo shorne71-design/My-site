@@ -30,18 +30,27 @@
         margin: 10px 0;
       }
 
+      #start-label {
+        font-size: 22px;
+        margin-top: 20px;
+      }
+
       #timer {
         font-size: 28px;
         font-weight: bold;
-        margin-top: 20px;
+        margin-top: 10px;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Hello Injured Workers, my true story of a crime</h1>
+      <h1>Hello Injured Workers. My True Story of a Crime</h1>
       <p>Covered up by Cooke Aquaculture and WorksafeNB</p>
 
+      <!-- Start date label -->
+      <div id="start-label">Time since August 14, 2014 at 5:00 PM:</div>
+
+      <!-- Count up timer -->
       <div id="timer">Loading...</div>
     </div>
 
@@ -58,45 +67,4 @@
         let days = now.getDate() - startDate.getDate();
         let hours = now.getHours() - startDate.getHours();
         let minutes = now.getMinutes() - startDate.getMinutes();
-        let seconds = now.getSeconds() - startDate.getSeconds();
-
-        // Adjust negatives
-        if (seconds < 0) {
-          seconds += 60;
-          minutes--;
-        }
-        if (minutes < 0) {
-          minutes += 60;
-          hours--;
-        }
-        if (hours < 0) {
-          hours += 24;
-          days--;
-        }
-        if (days < 0) {
-          months--;
-          // Days in previous month
-          const prevMonthDays = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-          days += prevMonthDays;
-        }
-        if (months < 0) {
-          years--;
-          months += 12;
-        }
-
-        // Update HTML
-        document.getElementById("timer").innerHTML =
-          years + " years, " +
-          months + " months, " +
-          days + " days, " +
-          hours + " hours, " +
-          minutes + " minutes, " +
-          seconds + " seconds";
-      }
-
-      // Run immediately and then every second
-      updateTimer();
-      setInterval(updateTimer, 1000);
-    </script>
-  </body>
-</html>
+        let seconds = now.getSeconds
