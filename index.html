@@ -21,7 +21,7 @@
       }
 
       h1 {
-        font-size: 96px;
+        font-size: 72px;
         margin: 0;
       }
 
@@ -52,12 +52,11 @@
     </div>
 
     <script>
-      const startDate = new Date("2014-08-14T17:00:00");
+      // Safer: year, monthIndex (0=Jan), day, hour, minute, second
+      const startDate = new Date(2014, 7, 14, 17, 0, 0);
 
       function updateTimer() {
         const now = new Date();
-
-        // total difference in ms
         let diff = now - startDate;
 
         if (diff < 0) {
@@ -65,7 +64,35 @@
           return;
         }
 
-        // break into units
-        let seconds = Math.floor(diff / 1000);
-        let minutes = Math.floor(seconds / 60);
-        let hours = Math.floor(minutes / 6
+        // Basic units
+        let seconds = Math.floor(diff / 1000) % 60;
+        let minutes = Math.floor(diff / (1000 * 60)) % 60;
+        let hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+
+        // Calendar math for years, months, days
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+
+        let tempStart = new Date(startDate);
+        tempStart.setFullYear(startDate.getFullYear() + years);
+        tempStart.setMonth(startDate.getMonth() + months);
+        let days = Math.floor((now - tempStart) / (1000 * 60 * 60 * 24));
+
+        document.getElementById("timer").innerHTML =
+          years + " years, " +
+          months + " months, " +
+          days + " days, " +
+          hours + " hours, " +
+          minutes + " minutes, " +
+          seconds + " seconds";
+      }
+
+      setInterval(updateTimer, 1000);
+      updateTimer();
+    </script>
+  </body>
+</html>
