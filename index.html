@@ -16,17 +16,17 @@
 
       .container {
         display: flex;
-        flex-direction: column; /* stack items top to bottom */
+        flex-direction: column; /* stack items */
         align-items: center;
       }
 
       h1 {
-        font-size: 96px; /* big heading */
+        font-size: 96px;
         margin: 0;
       }
 
       p {
-        font-size: 20px; /* normal paragraph size */
+        font-size: 20px;
         margin: 10px 0;
       }
 
@@ -39,18 +39,64 @@
   </head>
   <body>
     <div class="container">
-      <h1>My Awful Journey</h1>
-      <p>With Cooke Aquacultre and WorksafeNB</p>
+      <h1>Hello Injured Workers, my true story of a crime</h1>
+      <p>Covered up by Cooke Aquaculture and WorksafeNB</p>
 
-      <!-- Count up timer -->
       <div id="timer">Loading...</div>
     </div>
 
     <script>
       // Start date: August 14, 2014 at 5:00 PM
-      const startDate = new Date("August 14, 2014 17:00:00");
+      const startDate = new Date("2014-08-14T17:00:00");
 
       function updateTimer() {
         const now = new Date();
 
-        let years = now.getFullYear() - startDate.g
+        // Start with raw differences
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
+        let days = now.getDate() - startDate.getDate();
+        let hours = now.getHours() - startDate.getHours();
+        let minutes = now.getMinutes() - startDate.getMinutes();
+        let seconds = now.getSeconds() - startDate.getSeconds();
+
+        // Adjust negatives
+        if (seconds < 0) {
+          seconds += 60;
+          minutes--;
+        }
+        if (minutes < 0) {
+          minutes += 60;
+          hours--;
+        }
+        if (hours < 0) {
+          hours += 24;
+          days--;
+        }
+        if (days < 0) {
+          months--;
+          // Days in previous month
+          const prevMonthDays = new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+          days += prevMonthDays;
+        }
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+
+        // Update HTML
+        document.getElementById("timer").innerHTML =
+          years + " years, " +
+          months + " months, " +
+          days + " days, " +
+          hours + " hours, " +
+          minutes + " minutes, " +
+          seconds + " seconds";
+      }
+
+      // Run immediately and then every second
+      updateTimer();
+      setInterval(updateTimer, 1000);
+    </script>
+  </body>
+</html>
