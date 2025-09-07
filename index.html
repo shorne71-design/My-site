@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>COMING SOON</title>
+    <title></title>
     <style>
       body {
         background-color: ORANGE;
@@ -54,45 +54,11 @@
   </head>
   <body>
     <div class="container">
-      <h1>Hello Injured Workers. My True Story of a Crime</h1>
-      <p>Covered up by Cooke Aquaculture and WorksafeNB</p>
+      <h1></h1>
+      <p></p>
 
-      <div id="timer">Loading...</div>
 
-      <!-- Link to the image gallery -->
-      <a href="images.html" class="button">View Image Gallery ➡</a>
     </div>
 
-    <script>
-      const startDate = new Date("2014-08-14T17:00:00Z");
-
-      function updateTimer() {
-        const now = new Date();
-
-        if (now < startDate) {
-          document.getElementById("timer").innerHTML = "Not started yet";
-          return;
-        }
-
-        let diff = now - startDate;
-        let totalSeconds = Math.floor(diff / 1000);
-        let totalMinutes = Math.floor(totalSeconds / 60);
-        let totalHours = Math.floor(totalMinutes / 60);
-        let totalDays = Math.floor(totalHours / 24);
-
-        let seconds = totalSeconds % 60;
-        let minutes = totalMinutes % 60;
-        let hours = totalHours % 24;
-
-        document.getElementById("timer").innerHTML =
-          totalDays + " days, " +
-          hours + " hours, " +
-          minutes + " minutes, " +
-          seconds + " seconds";
-      }
-
-      setInterval(updateTimer, 1000);
-      updateTimer();
-    </script>
   </body>
 </html>
