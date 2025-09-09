@@ -1,39 +1,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Scattered Letters</title>
   <style>
     body, html {
       margin: 0;
       height: 100%;
-    }
-
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(#FF0000 50%, #800080 50%);
       font-family: Arial, sans-serif;
-      text-align: center;
-      color: white; /* Text color */
+      background: #FFD9B3; /* Soft orange background */
+      overflow: hidden;
+      position: relative;
+      color: #800080; /* Purple letters */
     }
 
     h1 {
-      font-size: 72px;
-      margin: 0;
+      font-size: 48px;
+      text-align: center;
+      margin-top: 20px;
+      color: #800080;
     }
 
-    p {
-      font-size: 24px;
-      margin: 10px 0;
+    /* Letters styled as circles */
+    .letter {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: white;
+      border: 3px solid #800080;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: #800080;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+    .letter:hover {
+      transform: scale(1.2);
+      background: #f3e6ff; /* light purple hover */
+    }
+
+    /* Popup modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      text-align: center;
+      font-size: 18px;
+    }
+    .close {
+      color: red;
+      font-weight: bold;
+      cursor: pointer;
+      float: right;
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1>Personal Blog</h1>
-    <p>See You Soon</p>
+  <h1>Click the Letters</h1>
+
+  <!-- Scattered Letters -->
+  <span class="letter" style="top: 15%; left: 10%;" data-meaning="W is for Wonder — the little spark that keeps us curious.">W</span>
+  <span class="letter" style="top: 30%; left: 70%;" data-meaning="O is for Opportunity — it doesn’t always knock, sometimes you have to chase it.">O</span>
+  <span class="letter" style="top: 55%; left: 25%;" data-meaning="R is for Resilience — the reminder that even in depression, we can rise again.">R</span>
+  <span class="letter" style="top: 75%; left: 60%;" data-meaning="K is for Kindness — the thing the world never has enough of.">K</span>
+  <span class="letter" style="top: 40%; left: 15%;" data-meaning="S is for Steve — just trying to make sense of it all.">S</span>
+  <span class="letter" style="top: 70%; left: 80%;" data-meaning="A is for Adapt — because life rarely goes according to plan.">A</span>
+  <span class="letter" style="top: 20%; left: 50%;" data-meaning="F is for Fairness — the world is better when we share the load.">F</span>
+  <span class="letter" style="top: 65%; left: 35%;" data-meaning="E is for Effort — even the tiniest steps forward count.">E</span>
+  <span class="letter" style="top: 10%; left: 80%;" data-meaning="N is for Now — the only moment we actually get to live in.">N</span>
+  <span class="letter" style="top: 85%; left: 20%;" data-meaning="B is for Blog — a place to spill thoughts, lessons, and a little truth.">B</span>
+
+  <!-- Modal -->
+  <div id="popup" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="popup-text"></p>
+    </div>
   </div>
+
+  <script>
+    const letters = document.querySelectorAll(".letter");
+    const modal = document.getElementById("popup");
+    const popupText = document.getElementById("popup-text");
+    const closeBtn = document.querySelector(".close");
+
+    letters.forEach(letter => {
+      letter.addEventListener("click", () => {
+        popupText.textContent = letter.dataset.meaning;
+        modal.style.display = "flex";
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
