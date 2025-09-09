@@ -13,25 +13,18 @@
       color: #800080; /* Purple letters */
     }
 
-    h1 {
-      font-size: 48px;
-      text-align: center;
-      margin-top: 20px;
-      color: #800080;
-    }
-
     /* Letters styled as circles */
     .letter {
       position: absolute;
-      width: 60px;
-      height: 60px;
+      width: 1.5in;   /* 1.5 inches diameter */
+      height: 1.5in;
       background: white;
       border: 3px solid #800080;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 30px;
+      font-size: 36px;
       font-weight: bold;
       color: #800080;
       cursor: pointer;
@@ -73,19 +66,18 @@
   </style>
 </head>
 <body>
-  <h1>Click the Letters</h1>
 
   <!-- Scattered Letters -->
-  <span class="letter" style="top: 15%; left: 10%;" data-meaning="W is for Wonder — the little spark that keeps us curious.">W</span>
-  <span class="letter" style="top: 30%; left: 70%;" data-meaning="O is for Opportunity — it doesn’t always knock, sometimes you have to chase it.">O</span>
-  <span class="letter" style="top: 55%; left: 25%;" data-meaning="R is for Resilience — the reminder that even in depression, we can rise again.">R</span>
-  <span class="letter" style="top: 75%; left: 60%;" data-meaning="K is for Kindness — the thing the world never has enough of.">K</span>
-  <span class="letter" style="top: 40%; left: 15%;" data-meaning="S is for Steve — just trying to make sense of it all.">S</span>
-  <span class="letter" style="top: 70%; left: 80%;" data-meaning="A is for Adapt — because life rarely goes according to plan.">A</span>
-  <span class="letter" style="top: 20%; left: 50%;" data-meaning="F is for Fairness — the world is better when we share the load.">F</span>
-  <span class="letter" style="top: 65%; left: 35%;" data-meaning="E is for Effort — even the tiniest steps forward count.">E</span>
-  <span class="letter" style="top: 10%; left: 80%;" data-meaning="N is for Now — the only moment we actually get to live in.">N</span>
-  <span class="letter" style="top: 85%; left: 20%;" data-meaning="B is for Blog — a place to spill thoughts, lessons, and a little truth.">B</span>
+  <span class="letter" style="top: 5%; left: 10%;" data-meaning="W is for Wonder — the little spark that keeps us curious.">W</span>
+  <span class="letter" style="top: 40%; left: 80%;" data-meaning="O is for Opportunity — it doesn’t always knock, sometimes you have to chase it.">O</span>
+  <span class="letter" style="top: 60%; left: 20%;" data-meaning="R is for Resilience — the reminder that even in depression, we can rise again.">R</span>
+  <span class="letter" style="top: 85%; left: 65%;" data-meaning="K is for Kindness — the thing the world never has enough of.">K</span>
+  <span class="letter" style="top: 15%; left: 50%;" data-meaning="S is for Steve — just trying to make sense of it all.">S</span>
+  <span class="letter" style="top: 75%; left: 5%;" data-meaning="A is for Adapt — because life rarely goes according to plan.">A</span>
+  <span class="letter" style="top: 25%; left: 30%;" data-meaning="F is for Fairness — the world is better when we share the load.">F</span>
+  <span class="letter" style="top: 55%; left: 75%;" data-meaning="E is for Effort — even the tiniest steps forward count.">E</span>
+  <span class="letter" style="top: 10%; left: 85%;" data-meaning="N is for Now — the only moment we actually get to live in.">N</span>
+  <span class="letter" style="top: 90%; left: 30%;" data-meaning="B is for Blog — a place to spill thoughts, lessons, and a little truth.">B</span>
 
   <!-- Modal -->
   <div id="popup" class="modal">
