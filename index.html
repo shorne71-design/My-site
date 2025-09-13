@@ -1,113 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Scattered Letters</title>
+<head>
+  <title>Independent Info on WorkSafeNB | Injured Workers</title>
+
+  <!-- Basic SEO -->
+  <meta charset="UTF-8">
+  <meta name="description" content="Independent resource for injured workers in New Brunswick. Not affiliated with WorkSafeNB. Learn the truth about workplace injuries and compensation.">
+  <meta name="keywords" content="WorkSafeNB, New Brunswick, injured workers, workplace injury, compensation, workplace rights, WSNB">
+  <meta name="author" content="Steve">
+
+  <!-- Mobile friendly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Open Graph (for Facebook/LinkedIn sharing) -->
+  <meta property="og:title" content="Independent Info on WorkSafeNB">
+  <meta property="og:description" content="Unfiltered resources and stories from injured workers. Not affiliated with WorkSafeNB.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com/">
+  <meta property="og:image" content="https://your-domain.com/images/preview.jpg">
+
+  <!-- Twitter Card (for Twitter/X sharing) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Independent Info on WorkSafeNB">
+  <meta name="twitter:description" content="Unfiltered resources and stories from injured workers. Not affiliated with WorkSafeNB.">
+  <meta name="twitter:image" content="https://your-domain.com/images/preview.jpg">
+</head>
+
+</head>
+<body>
+  <div>
+    <h1>Hi Cooke Aqua and WorksafeNB</h1>
+    <p>See You Soon</p>
+  </div>
+</body><!DOCTYPE html>
+<html>
+<head>
+  <title>COMING SOON</title>
   <style>
     body, html {
       margin: 0;
       height: 100%;
-      font-family: Arial, sans-serif;
-      background: #E07B3F; /* Darker orange background */
-      overflow: hidden;
-      position: relative;
-      color: white;
-    }
-
-    /* Letters styled as filled circles */
-    .letter {
-      position: absolute;
-      width: 2.5in;
-      height: 2.5in;
-      background: #800080; /* Purple fill */
-      border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 60px;
-      font-weight: bold;
+      text-align: center;
+      font-family: Arial, sans-serif;
       color: white;
-      cursor: pointer;
-      transition: transform 0.2s, background 0.3s;
-    }
-    .letter:hover {
-      transform: scale(1.1);
-      background: #A020F0; /* lighter purple on hover */
+      flex-direction: column;
     }
 
-    /* Popup modal */
-    .modal {
-      display: none;
+    /* Split background: Orange top, Blue bottom */
+    body::before {
+      content: "";
       position: fixed;
-      z-index: 10;
-      left: 0;
       top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
+      background: linear-gradient(#CD6D1C 50%, #003E69 50%);
+      z-index: -1;
     }
-    .modal-content {
-      background: white;
-      color: black;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 400px;
-      text-align: center;
-      font-size: 18px;
+
+    h1 {
+      font-size: 96px;
+      margin: 0;
     }
-    .close {
-      color: red;
-      font-weight: bold;
-      cursor: pointer;
-      float: right;
+
+    p {
+      font-size: 20px;
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
+  <div>
+    <h1>September 18th 2025 8:30am</h1>
+    <p>Injured Worker vs Cooke Aqua and WorksafeNB</p>
 
-  <!-- Letters close together but not touching -->
-  <span class="letter" style="top: 10%; left: 10%;" data-meaning="W is for Wonder — the little spark that keeps us curious.">W</span>
-  <span class="letter" style="top: 10%; left: 45%;" data-meaning="O is for Opportunity — it doesn’t always knock, sometimes you have to chase it.">O</span>
-  <span class="letter" style="top: 10%; left: 80%;" data-meaning="R is for Resilience — the reminder that even in depression, we can rise again.">R</span>
-  <span class="letter" style="top: 45%; left: 10%;" data-meaning="K is for Kindness — the thing the world never has enough of.">K</span>
-  <span class="letter" style="top: 45%; left: 45%;" data-meaning="S is for Steve — just trying to make sense of it all.">S</span>
-  <span class="letter" style="top: 45%; left: 80%;" data-meaning="A is for Adapt — because life rarely goes according to plan.">A</span>
-  <span class="letter" style="top: 80%; left: 10%;" data-meaning="F is for Fairness — the world is better when we share the load.">F</span>
-  <span class="letter" style="top: 80%; left: 45%;" data-meaning="E is for Effort — even the tiniest steps forward count.">E</span>
-  <span class="letter" style="top: 80%; left: 80%;" data-meaning="N is for Now — the only moment we actually get to live in.">N</span>
-  <span class="letter" style="top: 55%; left: 62%;" data-meaning="B is for Blog — a place to spill thoughts, lessons, and a little truth.">B</span>
-
-  <!-- Modal -->
-  <div id="popup" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p id="popup-text"></p>
-    </div>
+    <!-- Hidden text (change these words to your own secret messages) -->
+    <p style="color:#CD6D1C;">Roberto Sgrosso Rebecca Bonnell Connors Michael Bewsher Florence Flowers  Cathy Bent  </p>
+    <p style="color:#003E69;">Denis Rioux Tracey Ross Danielle Caissie Tim Peterson</p>
   </div>
-
-  <script>
-    const letters = document.querySelectorAll(".letter");
-    const modal = document.getElementById("popup");
-    const popupText = document.getElementById("popup-text");
-    const closeBtn = document.querySelector(".close");
-
-    letters.forEach(letter => {
-      letter.addEventListener("click", () => {
-        popupText.textContent = letter.dataset.meaning;
-        modal.style.display = "flex";
-      });
-    });
-
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-  </script>
 </body>
+</html>
+
 </html>
