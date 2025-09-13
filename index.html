@@ -25,44 +25,48 @@
       z-index: -1;
     }
 
-    /* Centered visible text */
-    .center {
-      height: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    /* Center text across the dividing line */
+    .center-line {
+      position: absolute;
+      top: 50%;          /* push down to halfway */
+      left: 50%;         /* center horizontally */
+      transform: translate(-50%, -50%); /* true centering */
       text-align: center;
     }
 
     h1 {
-      font-size: 72px;
+      font-size: 64px;
       margin: 0;
     }
 
     p {
-      font-size: 20px;
+      font-size: 24px;
       margin: 10px 0;
     }
 
-    /* Hidden text at bottom */
+    /* Hidden text at bottom (blue area) */
     .hidden-blue {
-      color: #003E69; /* same as blue background */
+      color: #003E69;
       text-align: center;
       padding: 40px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 <body>
-  <!-- Orange half with main content -->
-  <div class="center">
+  <!-- Main text centered across the split -->
+  <div class="center-line">
     <h1>September 18th 2025 8:30am</h1>
     <p>Injured Worker vs Cooke Aqua and WorksafeNB</p>
   </div>
 
-  <!-- Blue half with hidden names -->
+  <!-- Hidden names in blue area -->
   <div class="hidden-blue">
-    Roberto Sgrosso Rebecca Bonnell Connors Michael Bewsher Florence Flowers Cathy Bent Denis Rioux Tracey Ross Danielle Caissie Tim Peterson David Luther Anik Cormier
+    Roberto Sgrosso Rebecca Bonnell Connors Michael Bewsher Florence Flowers 
+    Cathy Bent Denis Rioux Tracey Ross Danielle Caissie Tim Peterson 
+    David Luther Anik Cormier
   </div>
 </body>
 </html>
