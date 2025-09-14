@@ -36,13 +36,6 @@
       font-size: 20px;
       margin: 10px 0;
     }
-
-    #counter {
-      position: fixed;
-      bottom: 10px;
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.6); /* subtle faded white */
-    }
   </style>
 </head>
 <body>
@@ -50,17 +43,5 @@
     <h1>September 18th 2025 8:30am</h1>
     <p>Injured Worker vs Cooke Aqua and WorksafeNB</p>
   </div>
-
-  <!-- Site visit counter -->
-  <div id="counter">Visits: Loading...</div>
-
-  <script>
-    // Unique namespace for your counter
-    fetch('https://api.countapi.xyz/hit/worksafenb.me/homepage')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('counter').innerText = "Visits: " + data.value;
-      });
-  </script>
 </body>
 </html>
