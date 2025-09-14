@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Independent Info on WorkSafeNB | Injured Workers</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>COMING SOON</title>
   <style>
     body, html {
       margin: 0;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       font-family: Arial, sans-serif;
       color: white;
     }
@@ -25,45 +27,40 @@
       z-index: -1;
     }
 
-    /* Center text across the dividing line */
-    .center-line {
-      position: absolute;
-      top: 50%;          /* push down to halfway */
-      left: 50%;         /* center horizontally */
-      transform: translate(-50%, -50%); /* true centering */
-      text-align: center;
-    }
-
     h1 {
-      font-size: 64px;
+      font-size: 48px;
       margin: 0;
     }
 
     p {
-      font-size: 24px;
+      font-size: 20px;
       margin: 10px 0;
     }
 
-    /* Hidden text at bottom (blue area) */
-    .hidden-blue {
-      color: #003E69;
-      text-align: center;
-      padding: 40px;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
+    #counter {
+      position: fixed;
+      bottom: 10px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6); /* subtle faded white */
     }
   </style>
 </head>
 <body>
-  <!-- Main text centered across the split -->
-  <div class="center-line">
+  <div>
     <h1>September 18th 2025 8:30am</h1>
     <p>Injured Worker vs Cooke Aqua and WorksafeNB</p>
   </div>
 
-  <!-- Hidden names in blue area -->
-  <div class="hidden-blue">
-  </div>
+  <!-- Site visit counter -->
+  <div id="counter">Visits: Loading...</div>
+
+  <script>
+    // Unique namespace for your counter
+    fetch('https://api.countapi.xyz/hit/worksafenb.me/homepage')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('counter').innerText = "Visits: " + data.value;
+      });
+  </script>
 </body>
 </html>
