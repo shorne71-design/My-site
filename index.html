@@ -12,14 +12,14 @@
   <!-- Mobile friendly -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Open Graph (for Facebook/LinkedIn sharing) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Independent Info on WorkSafeNB">
   <meta property="og:description" content="Unfiltered resources and stories from injured workers. Not affiliated with WorkSafeNB.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://worksafenb.me/">
   <meta property="og:image" content="https://your-domain.com/images/preview.jpg">
 
-  <!-- Twitter Card (for Twitter/X sharing) -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Independent Info on WorkSafeNB">
   <meta name="twitter:description" content="Unfiltered resources and stories from injured workers. Not affiliated with WorkSafeNB.">
@@ -36,9 +36,10 @@
       font-family: Arial, sans-serif;
       color: white;
       flex-direction: column;
+      position: relative;
     }
 
-    /* Split background: Orange top, Blue bottom */
+    /* Split background */
     body::before {
       content: "";
       position: fixed;
@@ -51,27 +52,25 @@
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 5vw;
       margin: 0;
     }
 
     p {
-      font-size: 20px;
+      font-size: 1.5vw;
       margin: 10px 0;
     }
 
-    .highlight {
+    /* Orange text inside the blue half */
+    .orange-text {
+      font-size: 2.5vw;          /* scales with screen size */
+      color: #CD6D1C;            /* orange */
+      text-transform: uppercase; /* all caps */
       position: absolute;
-      bottom: 25%;           /* vertically halfway inside the blue half */
+      top: 75%;                  /* halfway into the blue section */
       left: 50%;
-      transform: translateX(-50%);
-      color: #CD6D1C;         /* orange text */
-      font-size: 28px;
-      font-weight: bold;
-      text-align: center;
-      text-transform: uppercase;
-      max-width: 90%;
-      line-height: 1.4;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;       /* keep on one line */
     }
   </style>
 </head>
@@ -81,8 +80,9 @@
     <p>Injured Worker vs Cooke Aqua and WorksafeNB</p>
   </div>
 
-  <!-- Extra orange text positioned on blue section -->
-  <p class="highlight">WHY DOES A $4 BILLION DOLLAR A YEAR CONSERVATIVE LED COMPANY LIKE COOKE AQUACULTURE NEED COST RELIEF?</p>
-
+  <!-- New orange sentence -->
+  <div class="orange-text">
+    WHY DOES A $4BILLION DOLLAR A YEAR CONSERVATIVE LED COMPANY LIKE COOKE AQUACULTURE NEED COST RELIEF
+  </div>
 </body>
 </html>
