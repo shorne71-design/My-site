@@ -61,14 +61,17 @@
     }
 
     .highlight {
-      margin-top: 40px; /* pushes it further down */
-      color: #CD6D1C; /* orange text */
-      font-size: 32px; /* larger than body text */
+      position: absolute;
+      bottom: 25%;           /* vertically halfway inside the blue half */
+      left: 50%;
+      transform: translateX(-50%);
+      color: #CD6D1C;         /* orange text */
+      font-size: 28px;
       font-weight: bold;
-      max-width: 90%; /* makes sure it doesn’t wrap */
-      white-space: nowrap; /* forces one line */
-      overflow: hidden;
-      text-overflow: ellipsis; /* in case screen is too small */
+      text-align: center;
+      text-transform: uppercase;
+      max-width: 90%;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -76,7 +79,10 @@
   <div>
     <h1>September 18th 2025 8:30am</h1>
     <p>Injured Worker vs Cooke Aqua and WorksafeNB</p>
-    <p class="highlight">Why does a $4billion dollar a year conservative led company like Cooke Aquaculture need cost relief.</p>
   </div>
+
+  <!-- Extra orange text positioned on blue section -->
+  <p class="highlight">WHY DOES A $4 BILLION DOLLAR A YEAR CONSERVATIVE LED COMPANY LIKE COOKE AQUACULTURE NEED COST RELIEF?</p>
+
 </body>
 </html>
