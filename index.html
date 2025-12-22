@@ -1,37 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Gone for a Cuppa</title>
+  <title>Independent Info on WorkSafeNB | Injured Workers</title>
 
+  <!-- Basic SEO -->
+  <meta charset="UTF-8">
+  <meta name="description" content="Independent resource for injured workers in New Brunswick. Not affiliated with WorkSafeNB. Learn the truth about workplace injuries and compensation.">
+  <meta name="keywords" content="WorkSafeNB, New Brunswick, injured workers, workplace injury, compensation, workplace rights, WSNB, Tim Petersen, Cathy Bent, Lisa Walker, Laragh Dooley, Carolyn MacDonald, Richard Blais, Lee C. Bell-Smith, Mel Norton, Brooke DeLong, Mike MacMullin, Chantal Lafleur, James E. A. Stanley, Denny Vautour, Michael Freeze, Ashley Robichaud">
+  <meta name="author" content="Steve">
+
+  <!-- Mobile friendly -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <!-- Open Graph (for social preview) -->
+  <meta property="og:title" content="Independent Info on WorkSafeNB">
+  <meta property="og:description" content="Unfiltered resources and stories from injured workers. Not affiliated with WorkSafeNB.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://worksafenb.me/">
+  <meta property="og:image" content="https://your-domain.com/images/preview.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Independent Info on WorkSafeNB">
+  <meta name="twitter:description" content="Unfiltered resources and stories from injured workers. Not affiliated with WorkSafeNB.">
+  <meta name="twitter:image" content="https://your-domain.com/images/preview.jpg">
 
   <style>
-    html, body {
+    body, html {
       margin: 0;
-      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* Split background: Orange top, Blue bottom */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background-color: #ffffff;
+      background: linear-gradient(#CD6D1C 50%, #003E69 50%);
+      z-index: -1;
+    }
+
+    .top-section {
+      height: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Dancing Script', cursive;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .bottom-section {
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
     }
 
     h1 {
-      color: #000000;
-      font-size: clamp(64px, 10vw, 128px);
+      font-size: 48px;
       margin: 0;
-      text-align: center;
+    }
+
+    p {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    blockquote {
+      margin: 0 auto;
+      max-width: 700px;
+      color: #CD6D1C; /* orange */
+      font-size: 18px;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
+  <!-- Orange half -->
+  <div class="top-section">
+    <h1>And Now We Wait</h1>
+    <p>If you have Tracey Ross as a case manager, please read.</p>
+  </div>
 
-  <h1>Gone for a Cuppa</h1>
-
+  <!-- Blue half -->
+  <div class="bottom-section">
+    <blockquote>
+      “Tracey Ross acts less like a supporter of injured workers and more like a policy-driven adjudicator.  
+      She applies strict thresholds, criteria, and internal policies to limit claims, prioritizing the Board’s liability over worker context.  
+      She isn’t hostile, but she isn’t an ally — institutionally conservative, rule-bound, and not worker-driven.”  
+      <br>— ChatGPT
+    </blockquote>
+  </div>
 </body>
 </html>
