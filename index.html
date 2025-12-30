@@ -6,98 +6,93 @@
   <!-- Basic SEO -->
   <meta charset="UTF-8">
   <meta name="description" content="Independent resource for injured workers in New Brunswick. Not affiliated with WorkSafeNB. Learn the truth about workplace injuries and compensation.">
-  <meta name="keywords" content="WorkSafeNB, New Brunswick, injured workers, workplace injury, compensation, workplace rights, WSNB, Tim Petersen, Cathy Bent, Lisa Walker, Laragh Dooley, Carolyn MacDonald, Richard Blais, Lee C. Bell-Smith, Mel Norton, Brooke DeLong, Mike MacMullin, Chantal Lafleur, James E. A. Stanley, Denny Vautour, Michael Freeze, Ashley Robichaud">
+  <meta name="keywords" content="WorkSafeNB, New Brunswick, injured workers, workplace injury, compensation, workplace rights, WSNB">
   <meta name="author" content="Steve">
 
-  <!-- Mobile friendly -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Open Graph (for social preview) -->
-  <meta property="og:title" content="Independent Info on WorkSafeNB">
-  <meta property="og:description" content="Unfiltered resources and stories from injured workers. Not affiliated with WorkSafeNB.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://worksafenb.me/">
-  <meta property="og:image" content="https://your-domain.com/images/preview.jpg">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Independent Info on WorkSafeNB">
-  <meta name="twitter:description" content="Unfiltered resources and stories from injured workers. Not affiliated with WorkSafeNB.">
-  <meta name="twitter:image" content="https://your-domain.com/images/preview.jpg">
-
   <style>
-    body, html {
+    html, body {
       margin: 0;
       height: 100%;
       font-family: Arial, sans-serif;
       color: white;
     }
 
-    /* Split background: Orange top, Blue bottom */
+    /* Split background */
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: linear-gradient(#CD6D1C 50%, #003E69 50%);
       z-index: -1;
     }
 
-    .top-section {
-      height: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-    }
-
+    .top-section,
     .bottom-section {
       height: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       text-align: center;
     }
 
+    .content {
+      max-width: 900px;        /* THIS is the key fix */
+      padding: 0 20px;
+    }
+
     h1 {
-      font-size: 48px;
-      margin: 0;
+      font-size: clamp(32px, 5vw, 48px);
+      margin: 0 0 15px 0;
     }
 
     p {
-      font-size: 20px;
-      margin: 10px 0;
+      font-size: clamp(16px, 2.5vw, 20px);
+      line-height: 1.4;
+      margin: 8px 0;
     }
 
     blockquote {
-      margin: 0 auto;
       max-width: 700px;
-      color: #CD6D1C; /* orange */
-      font-size: 18px;
+      padding: 0 20px;
+      font-size: clamp(16px, 2.3vw, 18px);
       font-style: italic;
+      color: #CD6D1C;
+      margin: 0;
     }
   </style>
 </head>
+
 <body>
-  <!-- Orange half -->
+
+  <!-- ORANGE -->
   <div class="top-section">
-    <h1>These people work at or for WorksafeNB</h1>
-    <p>Anik Keenan WSNB and Marie-France Pelletier OMBUDNB provide legal cover for employers and WorksafeNB</p>
-    <p>Mel Norton, chairman and Conservative and lawyer at Lawson Creamer. Loves to protect the rich. Hates the injured<p>
+    <div class="content">
+      <h1>These people work at or for WorkSafeNB</h1>
+
+      <p>
+        Anik Keenan (WSNB) and Marie-France Pelletier (OMBUDNB) provide legal cover
+        for employers and WorkSafeNB.
+      </p>
+
+      <p>
+        Mel Norton — chairman, Conservative, and lawyer at Lawson Creamer.
+        Protects wealth. Disregards injured workers.
+      </p>
+    </div>
   </div>
 
-  <!-- Blue half -->
+  <!-- BLUE -->
   <div class="bottom-section">
     <blockquote>
-      “Tracey Ross acts less like a supporter of injured workers and more like a policy-driven adjudicator.  
-      She applies strict thresholds, criteria, and internal policies to limit claims, prioritizing the Board’s liability over worker context.  
-      She isn’t hostile, but she isn’t an ally — institutionally conservative, rule-bound, and not worker-driven.”  
+      “Tracey Ross acts less like a supporter of injured workers and more like a
+      policy-driven adjudicator. She applies strict thresholds, criteria, and
+      internal policies to limit claims, prioritizing institutional liability
+      over worker context. She isn’t hostile, but she isn’t an ally.”
       <br>— ChatGPT
     </blockquote>
   </div>
+
 </body>
 </html>
